@@ -1,0 +1,47 @@
+services:
+  ompserver:
+    build: .  # Certifique-se de que o Dockerfile esteja no mesmo diretório
+    container_name: ompserver
+    ports:
+      - "8080:80"  # Porta para acessar a aplicação web
+    environment:
+      - MYSQL_HOST=db_omp
+      - MYSQL_DATABASE=ompsys  # Nome do banco de dados em minúsculas
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=123@#$  # Senha do banco de dados
+    networks:
+      - omp-network
+
+  db_omp:
+    image: mysql
+    container_name: db_omp
+    environment:
+      - MYSQL_ROOT_PASSWORD=123@#$  # Senha do root do MySQL
+      - MYSQL_DATABASE=ompsys  # Nome do banco de dados
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"  # Porta para acessar o MySQL/MariaDB diretamente
+    networks:
+      - omp-network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db_omp  # Nome do serviço do banco de dados
+      - PMA_PORT=3306  # Porta do MySQL
+      - MYSQL_ROOT_PASSWORD=123@#$  # Senha do root do MySQL
+    ports:
+      - "8081:80"  # Porta para acessar o phpMyAdmin (você pode escolher outra porta se necessário)
+    depends_on:
+      - db_omp  # Garante que o phpMyAdmin só inicie após o banco de dados
+    networks:
+      - omp-network
+
+networks:
+  omp-network:
+    driver: bridge
+
+volumes:
+  db_data:
