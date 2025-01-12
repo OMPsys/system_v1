@@ -34,7 +34,7 @@ class Database extends Config
 		'DSN'      => '',
 		'hostname' => 'db_omp',
 		'username' => 'root',
-		'password' => '123@#$',
+		'password' => '=.JHOnf/xCj2',
 		'database' => 'ompsys',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => 'omp_',
