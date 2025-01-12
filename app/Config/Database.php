@@ -32,12 +32,12 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'enter_hostname',
-		'username' => 'enter_db_username',
-		'password' => 'enter_db_password',
-		'database' => 'enter_database_name',
+		'hostname' => 'db_omp',
+		'username' => 'root',
+		'password' => '123@#$',
+		'database' => 'ompsys',
 		'DBDriver' => 'MySQLi',
-		'DBPrefix' => 'enter_dbprefix',
+		'DBPrefix' => 'omp_',
 		'pConnect' => false,
 		'DBDebug'  => (ENVIRONMENT !== 'production'),
 		'charset'  => 'utf8',
