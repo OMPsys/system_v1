@@ -4,7 +4,3 @@
 <IfModule !authz_core_module>
     Deny from all
 </IfModule>
-<Directory /var/www/html>
-    AllowOverride All
-    Require all granted
-</Directory>

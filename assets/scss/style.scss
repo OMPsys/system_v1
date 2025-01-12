@@ -610,7 +610,7 @@ i.online {
     -webkit-box-shadow: 0px 3px 4px 0px rgba(0, 0, 0, 0.03) !important;
 
     .card-header {
-        background-color: #474849;
+        background-color: $white;
         border-color: $light-default-border;
         padding: 12px 16px;
 
@@ -651,7 +651,7 @@ i.online {
 
 .bg-white {
     .card-header {
-        background-color: #474849;
+        background-color: $white;
         color: inherit;
         font-weight: bold;
         border-color: $light-default-border;
