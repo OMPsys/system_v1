@@ -32,7 +32,7 @@ class Database extends Config
 	 */
 	public $default = [
 		'DSN'      => '',
-		'hostname' => 'db_omp',
+		'hostname' => 'localhost',
 		'username' => 'root',
 		'password' => '=.JHOnf/xCj2',
 		'database' => 'ompsys',
